@@ -2,11 +2,11 @@ import React from 'react';
 
 const HeroAbout = () => {
     return (
-        <div className='relative flex mt-20'>
-            <div>
-                <img src="https://cdn.pixabay.com/photo/2016/10/13/16/39/career-1738216_960_720.jpg" alt="" />
+        <div className='relative flex mt-20 h-96'>
+            <div className='w-full h-full'>
+                <img src="https://media.istockphoto.com/id/1363734893/photo/happy-family-aboard-a-yacht-out-to-sea.jpg?b=1&s=170667a&w=0&k=20&c=COw-RRsIy5kkeFWM1NALhrEfylEOBkHgliYNuAy14iM=" alt="" />
             </div>
-            <div className='py-5 pl-10'>
+            <div className='py-5 px-10 w-/4 bg-gray-300 lg:absolute left-96 top-10 h-96 '>
                 <h6 className='text-xl font-semibold '>About us</h6>
                 <h2 className='text-3xl font-bold'> What we offer</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, modi!</p>
