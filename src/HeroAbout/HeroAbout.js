@@ -13,28 +13,28 @@ const HeroAbout = () => {
                 <p className='mb-5'>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Non, modi!</p>
 
                 <div>
-                    <div className='flex  '>
+                    <div className='flex mb-5 '>
                        <AiOutlineCheckCircle className='text-4xl mr-5 mt-2 text-blue-600 '></AiOutlineCheckCircle>
                         <div>
-                        <h3 className='font-bold text-3xl text-blue-600'>Exiting places</h3>
+                        <h3 className='font-bold text-3xl text-blue-600'>Large collection of boats</h3>
                         <p>Lorem ipsum dolor sit amet.
                         </p>
                         </div>
                        
                     </div>
-                    <div className='flex '>
+                    <div className='flex mb-5'>
                        <AiOutlineCheckCircle className='text-4xl mr-5 mt-2 text-blue-600 '></AiOutlineCheckCircle>
                         <div>
-                        <h3 className='font-bold text-3xl text-blue-600'>Exiting places</h3>
+                        <h3 className='font-bold text-3xl text-blue-600 '>Quality assured products</h3>
                         <p>Lorem ipsum dolor sit amet.
                         </p>
                         </div>
                        
                     </div>
-                    <div className='flex '>
-                       <AiOutlineCheckCircle className='text-4xl mr-5 mt-2 text-blue-600 '></AiOutlineCheckCircle>
+                    <div className='flex mb-5 '>
+                       <AiOutlineCheckCircle className='text-4xl mr-5 mt-2  text-blue-600 '></AiOutlineCheckCircle>
                         <div>
-                        <h3 className='font-bold text-3xl text-blue-600'>Exiting places</h3>
+                        <h3 className='font-bold text-3xl text-blue-600'>Shipping at your  door</h3>
                         <p>Lorem ipsum dolor sit amet.
                         </p>
                         </div>
