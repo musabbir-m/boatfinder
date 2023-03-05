@@ -9,7 +9,7 @@ const HeroAbout = () => {
             </div>
             <div className='pt-5 pl-12   bg-white shadow-md w-2/4 '>
                 <h6 className='text-xl text-blue-800 font-semibold mb-3'>Why Buy Form Us</h6>
-                <h2 className='text-5xl font-semibold mb-5'> What we offer</h2>
+                <h2 className='text-5xl font-semibold mb-5'> Best Quality and Large Collection</h2>
                 <p className='mb-5'>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Non, modi!</p>
 
                 <div>
