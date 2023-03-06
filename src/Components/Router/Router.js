@@ -1,3 +1,4 @@
+import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Home from "../Home/Home";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -13,8 +14,14 @@ const router= createBrowserRouter(
             children: [
                 {
                     path: '/',
-                    element: <Home></Home>
+                    element: <Home></Home>,
+                  
                 },
+                {
+                    path: '/category/:id',
+                    element: <CategoryProducts></CategoryProducts>,
+                    loader: ({params})=> fetch(`http://localhost:5000/categories/${params.id}`)
+                }
 
             ]
         }
