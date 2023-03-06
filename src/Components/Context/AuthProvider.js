@@ -49,6 +49,7 @@ const authInfo= {
     loading, 
     logout,
     login, 
+    signUp
 
 
 }

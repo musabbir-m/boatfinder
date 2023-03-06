@@ -20,7 +20,7 @@ const Hero = () => {
     <div className='heromain   bg-cover h-[500px]'>
 
      <div className='herotext w-2/4 h-full bg-black pt-8 px-5 '>
-         <h2 className='text-white text-7xl font-bold text-center '>Sail to your dream destination</h2>
+         <h2 className='text-white text-6xl font-bold text-center mt-3 '> Find Your Next Boat and sail to The Blue </h2>
          <p className='text-xl text-white font-semibold px-5'>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quasi aliquid laborum dolores recusandae reprehenderit corporis adipisci dicta? 
          </p>
