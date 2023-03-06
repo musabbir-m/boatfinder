@@ -2,7 +2,7 @@ import { updateEmail } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { useFetcher } from "react-router-dom";
+import { useFetcher, useNavigate } from "react-router-dom";
 import {AuthContext} from '../Context/AuthProvider'
 const Signup = () => {
   const {
@@ -11,7 +11,8 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const {user,  loading,  logout, login, signUp,updateUser}= useContext(AuthContext)
+  const { signUp,updateUser}= useContext(AuthContext)
+  const navigate= useNavigate()
 
   const [signupError, setSignupError]= useState("")
   const handleSignup= (data)=> {
@@ -22,12 +23,32 @@ const Signup = () => {
         const user= result.user
         console.log(user);
         toast("User Created Successfully")
-        const userInfo= {displayName: data.name, }
+        const userInfo= {displayName: data.name }
+        updateUser(userInfo)
+
+        .then((data)=> {})
+        .catch(err=> {})
+
+        saveUser(data.name, data.email, data.role)
+        navigate('/')
         
     })
     .catch(err=> setSignupError(err.message))
   }
 
+  const saveUser= (name, email, role)=> {
+    const user= {name, email, role, verified:"false"}
+    fetch( "http://localhost:5000/user", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+    }   
+    .then(res=> res.json())
+    .then(data=>console.log(data))
+    )
+}
 
 
 
