@@ -15,6 +15,9 @@ const DashboardLayout = () => {
     logout().then((data) => {});
   };
 
+  //side drawer list styele
+  const sideDrawerLi= "text-orange-500 text-xl font-semibold boreder bg-white mt-3 "
+
   return (
     <div>
       {/* Navbar */}
@@ -33,15 +36,15 @@ const DashboardLayout = () => {
           </label>
         </div>
 
-        <div className="drawer-side">
+        <div className="drawer-side bg-blue-500">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+          <ul className="menu p-4 w-80  bg-gray-300 text-base-content">
             {isAdmin && (
               <>
-                <li>
+                <li className={sideDrawerLi}>
                   <Link>All Buyers</Link>
                 </li>
-                <li>
+                <li className={sideDrawerLi}>
                   <Link>All Sellers</Link>
                 </li>
               </>
@@ -49,10 +52,10 @@ const DashboardLayout = () => {
 
             {
                 isBuyer && <>
-                <li>
+                <li className={sideDrawerLi}>
                     <Link>My bookings</Link>
                 </li>
-                <li>
+                <li className={sideDrawerLi}>
                     <Link>Wish list</Link>
                 </li>
                 </>
@@ -60,10 +63,15 @@ const DashboardLayout = () => {
 
             {
                 isSeller && 
-                (<li>
+                (<>
+                <li className={sideDrawerLi}>
                     <Link>My Products</Link>
-                    <Link>Add Product</Link>
-                </li>)
+                   
+                </li>
+                <li className={sideDrawerLi}>
+                     <Link to='/dashboard/addproduct'>Add Product</Link>
+                </li>
+                </>)
                 
             }
            

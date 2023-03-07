@@ -1,4 +1,5 @@
 import DashboardLayout from "../../Layout/DashboardLayout";
+import AddProduct from "../AddProduct/AddProduct";
 import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Dashboard from "../Dashboard/Dashboard";
 import Home from "../Home/Home";
@@ -44,7 +45,10 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard></Dashboard>
       },
-      
+      {
+        path: "/dashboard/addproduct",
+        element: <AddProduct></AddProduct>
+      }
     ]
   }
 ]);
