@@ -10,6 +10,7 @@ const useIfBuyer = (email) => {
             .then(res=> res.json())
             .then(data=> {
                 setIsBuyer(data.isBuyer)
+                console.log(data.isBuyer);
                 setBuyerLoading(false)
             })
         }

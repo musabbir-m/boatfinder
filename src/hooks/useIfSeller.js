@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const useIfSeller = (email) => {
-   const [isSeler, setIsSeller]= useState(false)
+   const [isSeller, setIsSeller]= useState(false)
    const [sellerLoading, setSellerLoading]= useState(true)
 
    useEffect(
@@ -9,13 +9,13 @@ const useIfSeller = (email) => {
         fetch(`http://localhost:5000/user/seller/${email}`)
         .then(res=> res.json())
         .then(data=> {
-            setIsSeller(data.isSeler)
+            setIsSeller(data.isSeller)
             setSellerLoading(false)
         })
     }
    )
     return (
-        [isSeler,sellerLoading]
+        [isSeller,sellerLoading]
     );
 };
 
