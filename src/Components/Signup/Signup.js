@@ -19,17 +19,18 @@ const Signup = () => {
     console.log(data);
     setSignupError("")
     signUp(data.email, data.password)
-    .then(result=> {
+    .then((result)=> {
         const user= result.user
         console.log(user);
         toast("User Created Successfully")
         const userInfo= {displayName: data.name }
         updateUser(userInfo)
 
-        .then((data)=> {})
+        .then(()=> {})
         .catch(err=> {})
 
         saveUser(data.name, data.email, data.role)
+     
         navigate('/')
         
     })
@@ -45,8 +46,7 @@ const Signup = () => {
         },
         body: JSON.stringify(user)
     }   
-    .then(res=> res.json())
-    .then(data=>console.log(data))
+    
     )
 }
 

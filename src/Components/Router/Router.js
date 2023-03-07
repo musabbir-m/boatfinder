@@ -1,5 +1,6 @@
 import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Home from "../Home/Home";
+import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup> </Signup>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>
+      }
     ],
   },
 ]);
