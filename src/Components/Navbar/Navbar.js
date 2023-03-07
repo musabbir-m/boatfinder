@@ -1,42 +1,66 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
+import { TbSpeedboat } from "react-icons/tb";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
-
-  const {user, logout}= useContext(AuthContext)
-  const handleLogout=()=> {
-    logout()
-    .then(data=> {})
-  }
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout().then((data) => {});
+  };
   const navitems = (
     <>
-      <li className="mr-3"> Home </li>
-      <li className="mr-3"> Products </li>
-      <li className="mr-3"> About </li>
-      <li className="mr-3"> Contact </li>
+      <li className="mr-3">
+        {" "}
+        <Link to="/">Home</Link>{" "}
+      </li>
+      <li className="mr-3">
+        {" "}
+        <Link>Products</Link>{" "}
+      </li>
+      <li className="mr-3">
+        {" "}
+        <Link>About</Link>{" "}
+      </li>
+      <li className="mr-3">
+        {" "}
+        <Link>Contact</Link>{" "}
+      </li>
 
-      {
-        user?.uid? 
+      {user?.uid ? (
         <>
-        <button onClick={handleLogout}>logout</button>
+          <div className="dropdown">
+            <label tabIndex={0} className="btn m-1">
+             <FaUserCircle className="text-2xl"></FaUserCircle>
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+             <li>
+             <button className="text-black " onClick={handleLogout}>logout</button>
+             </li>
+              <li>
+               <Link to='/dashboard' className="text-black ">Dashboard</Link>
+              </li>
+            </ul>
+          </div>
+          
         </>
-        : 
+      ) : (
         <>
-        <li>
-          <Link to='/login'>login</Link>
-        </li>
+          <li>
+            <Link to="/login">login</Link>
+          </li>
         </>
-      }
-
+      )}
     </>
   );
   return (
     <div>
       {/* top of the navbar */}
-      <div className="">
-        
-      </div>
+      <div className=""></div>
       {/* Top of the navbar ends */}
 
       {/* Main navbar */}
@@ -66,13 +90,17 @@ const Navbar = () => {
               {navitems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className=" normal-case text-xl bg-gray-200 rounded-md px-1 font-semibold italic text-black">
+            {" "}
+            <TbSpeedboat className="inline text-2xl"></TbSpeedboat>{" "}
+            <span className="text-blue-600"> Boat</span>Finder
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navitems}</ul>
         </div>
         <div className="navbar-end">
-          <Link className="px-6 py-3 bg-orange-500 " > Join Us</Link>
+          <Link className="px-6 py-3 bg-orange-500 "> Join Us</Link>
         </div>
       </div>
     </div>

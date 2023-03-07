@@ -25,7 +25,7 @@ const Hero = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quasi aliquid laborum dolores recusandae reprehenderit corporis adipisci dicta? 
          </p>
          <button className='px-4 py-3 bg-orange-500 text-white flex  mx-auto'>
-            Sell Now
+            Find Boat
          </button>
      </div>
     </div>
