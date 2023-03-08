@@ -37,6 +37,7 @@ const MyProducts = () => {
        toast('Deleted product')
    refetch()
    })
+
 }
   }
 
@@ -88,7 +89,6 @@ const MyProducts = () => {
               <td>{product.price}</td>
               <td>
                 <button
-                  disabled
                   onClick={() => {
                     advertiseItem(product);
                   }}

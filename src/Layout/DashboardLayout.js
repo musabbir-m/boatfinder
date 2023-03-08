@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Components/Context/AuthProvider";
+import Navbar from "../Components/Navbar/Navbar";
 import useIfAdmin from "../hooks/useIfAdmin";
 import useIfBuyer from "../hooks/useIfBuyer";
 import useIfSeller from "../hooks/useIfSeller";
@@ -21,12 +22,15 @@ const DashboardLayout = () => {
   return (
     <div>
       {/* Navbar */}
+      <Navbar></Navbar>
 
       {/* Dashboard */}
 
       <div className="drawer drawer-mobile">
+        
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
+          
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
