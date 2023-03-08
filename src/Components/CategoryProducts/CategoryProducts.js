@@ -6,7 +6,7 @@ const CategoryProducts = () => {
     const data= useLoaderData()
     console.log(data);
     return (
-        <div className='mt-10 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3'>
+        <div className='mt-10 mx-10 grid grid-cols-1 lg:grid-cols-2 gap-2'>
             {data.map(d=> <CategoryProductCard key={d._id} boat= {d}></CategoryProductCard>)}
         </div>
     );

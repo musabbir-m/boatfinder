@@ -42,10 +42,10 @@ const DashboardLayout = () => {
             {isAdmin && (
               <>
                 <li className={sideDrawerLi}>
-                  <Link>All Buyers</Link>
+                  <Link to='/dashboard/allbuyer'>All Buyers</Link>
                 </li>
                 <li className={sideDrawerLi}>
-                  <Link>All Sellers</Link>
+                  <Link to='/dashboard/allseller'>All Sellers</Link>
                 </li>
               </>
             )}
