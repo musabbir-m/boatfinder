@@ -23,6 +23,22 @@ const MyProducts = () => {
       return data;
     },
   });
+  //delete product
+
+  const deleteProduct= (product)=>{
+    const proceed= window.confirm('Do you really want to delete this product?')
+    if (proceed){
+    fetch(`http://localhost:5000/myproductdelete/${product._id}`, {
+        method: 'DELETE'
+    }
+   )
+   .then(res=> res.json())
+   .then(data=> {
+       toast('Deleted product')
+   refetch()
+   })
+}
+  }
 
   //advertise product
   const advertiseItem = (product) => {
@@ -39,11 +55,10 @@ const MyProducts = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-       toast('advertised successfully')
-        refetch()
-        setAddbtnLoading(false)
+        toast("advertised successfully");
+        refetch();
+        setAddbtnLoading(false);
       });
-
   };
 
   if (isLoading) {
@@ -72,16 +87,18 @@ const MyProducts = () => {
               <td>{product.productName}</td>
               <td>{product.price}</td>
               <td>
-                <button disabled
-                  onClick={()=>{advertiseItem(product)}}
+                <button
+                  disabled
+                  onClick={() => {
+                    advertiseItem(product);
+                  }}
                   className={`text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 `}
                 >
                   {product.advertised === "false" ? "advertise" : "advertised"}{" "}
-                  
                 </button>
               </td>
               <td>
-                <button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                <button onClick={()=>{deleteProduct(product)}} class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                   Delete
                 </button>
               </td>
