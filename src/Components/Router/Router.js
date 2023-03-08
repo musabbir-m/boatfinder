@@ -6,6 +6,7 @@ import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Dashboard from "../Dashboard/Dashboard";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
+import MyProducts from "../MyProducts/MyProducts";
 import Signup from "../Signup/Signup";
 import PrivateRoute from "./PrivateRoute";
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path: "/dashboard/addproduct",
         element: <AddProduct></AddProduct>
       },
+    {
+      path: '/dashboard/myproducts',
+      element: <MyProducts></MyProducts>
+    }
+      ,
       {
         path: '/dashboard/allseller',
         element: <AllSellers></AllSellers>
@@ -58,7 +64,8 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/allbuyer',
         element: <AllBuyer></AllBuyer>
-      }
+      },
+
     ]
   }
 ]);

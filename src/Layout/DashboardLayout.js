@@ -65,7 +65,7 @@ const DashboardLayout = () => {
                 isSeller && 
                 (<>
                 <li className={sideDrawerLi}>
-                    <Link>My Products</Link>
+                    <Link to='/dashboard/myproducts'>My Products</Link>
                    
                 </li>
                 <li className={sideDrawerLi}>
