@@ -25,9 +25,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/category/:id",
-        element: <PrivateRoute><CategoryProducts></CategoryProducts></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <CategoryProducts></CategoryProducts>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://boatfinder-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/signup",
@@ -35,44 +39,47 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
-      }
+        element: <Login></Login>,
+      },
     ],
   },
 
   //dashboard layour
   {
-    path: '/dashboard',
-    element: <PrivateRoute> <DashboardLayout></DashboardLayout></PrivateRoute>,
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        {" "}
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
       },
       {
         path: "/dashboard/addproduct",
-        element: <AddProduct></AddProduct>
-      },
-    {
-      path: '/dashboard/myproducts',
-      element: <MyProducts></MyProducts>
-    }
-      ,
-      {
-        path: '/dashboard/allseller',
-        element: <AllSellers></AllSellers>
+        element: <AddProduct></AddProduct>,
       },
       {
-        path: '/dashboard/allbuyer',
-        element: <AllBuyer></AllBuyer>
+        path: "/dashboard/myproducts",
+        element: <MyProducts></MyProducts>,
       },
       {
-        path: '/dashboard/mybooking',
-        element: <MyBookings></MyBookings>
-      }
-
-    ]
-  }
+        path: "/dashboard/allseller",
+        element: <AllSellers></AllSellers>,
+      },
+      {
+        path: "/dashboard/allbuyer",
+        element: <AllBuyer></AllBuyer>,
+      },
+      {
+        path: "/dashboard/mybooking",
+        element: <MyBookings></MyBookings>,
+      },
+    ],
+  },
 ]);
 
 export default router;

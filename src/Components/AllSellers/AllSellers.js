@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 const AllSellers = () => {
   // laod sellers
-  const url = "http://localhost:5000/seller";
+  const url = "https://boatfinder-server.vercel.app/seller";
 
   const {
     data: sellers = [],
@@ -23,7 +23,7 @@ const AllSellers = () => {
   //     const [seller, setSeller]= useState([])
   //     useEffect(
   //     ()=> {
-  //         fetch('http://localhost:5000/seller')
+  //         fetch('https://boatfinder-server.vercel.app/seller')
   //         .then(res=> res.json())
   //         .then(data=> setSeller(data))
   //     }, []
@@ -35,7 +35,7 @@ const AllSellers = () => {
     const proceed = window.confirm();
 
     if (proceed) {
-      fetch(`http://localhost:5000/seller/${target._id}`, {
+      fetch(`https://boatfinder-server.vercel.app/seller/${target._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -52,7 +52,7 @@ const AllSellers = () => {
 
     const verify = { verified: "true" };
 
-    fetch(`http://localhost:5000/seller/${seller._id}`, {
+    fetch(`https://boatfinder-server.vercel.app/seller/${seller._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

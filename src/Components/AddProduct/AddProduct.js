@@ -11,80 +11,72 @@ const AddProduct = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  ;
   const navigate = useNavigate();
-  
- 
-
- 
 
   //Add Product functin
   const handleAddProduct = (data) => {
-    const imageBbKey = "e419d019481d8c92648b9beb567065df"
-    const image=  data.img[0]
-    const formData= new FormData()
-    formData.append("image", image)
-    const url= `https://api.imgbb.com/1/upload?&key=${imageBbKey}`
-    // 
+    const imageBbKey = "e419d019481d8c92648b9beb567065df";
+    const image = data.img[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?&key=${imageBbKey}`;
+    //
     fetch(url, {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((imgData) => {
-          if (imgData.success) {
-            console.log(imgData.data.url);
-  
-            //prouct data
-  
-            const newProduct = {
-              productName: data.name,
-              productCategory: data.category,
-              price: data.price,
-              condition: data.condition,
-              purchaseDate: data.purchaseDate,
-              postDate: new Date().toJSON().slice(0, 10),
-              yearsUsed: data.useDuration,
-              location: data.location,
-              mobile: data.phone,
-              sellerEmail: user?.email,
-              img: imgData.data.url,
-              description: data.description,
-              advertised: "false",
-              salesStatus: "unsold",
-            };
-  
-            console.log(newProduct);
-            //post product
-            fetch("http://localhost:5000/product", {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(newProduct),
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                console.log(data);
-                toast("Product Added Successfully");
-              });
-          }
-          navigate("/dashboard/myproducts");
-        });
-    // 
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        if (imgData.success) {
+          console.log(imgData.data.url);
 
+          //prouct data
+
+          const newProduct = {
+            productName: data.name,
+            productCategory: data.category,
+            price: data.price,
+            condition: data.condition,
+            purchaseDate: data.purchaseDate,
+            postDate: new Date().toJSON().slice(0, 10),
+            yearsUsed: data.useDuration,
+            location: data.location,
+            mobile: data.phone,
+            sellerEmail: user?.email,
+            img: imgData.data.url,
+            description: data.description,
+            advertised: "false",
+            salesStatus: "unsold",
+          };
+
+          console.log(newProduct);
+          //post product
+          fetch("https://boatfinder-server.vercel.app/product", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newProduct),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              toast("Product Added Successfully");
+            });
+        }
+        navigate("/dashboard/myproducts");
+      });
+    //
   };
-
 
   //callsses for style
 
   const labelClass = " mb-2 text-sm font-medium text-gray-900 ";
   const inputClass =
     "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   w-full p-2.5  ";
-    
-   
-   //Add product form 
-    return (
+
+  //Add product form
+  return (
     <div className="my-10 h-full">
       <h2 className="text-4xl text-center border text-orange-500 mb-8 py-2 shadow-sm">
         Add Product

@@ -8,7 +8,7 @@ const MyProducts = () => {
   const { user } = useContext(AuthContext);
 
   const [adbtnLoading, setAddbtnLoading] = useState(false);
-  const url = `http://localhost:5000/myproducts?email=${user?.email}`;
+  const url = `https://boatfinder-server.vercel.app/myproducts?email=${user?.email}`;
   console.log(url);
 
   const {
@@ -25,21 +25,24 @@ const MyProducts = () => {
   });
   //delete product
 
-  const deleteProduct= (product)=>{
-    const proceed= window.confirm('Do you really want to delete this product?')
-    if (proceed){
-    fetch(`http://localhost:5000/myproductdelete/${product._id}`, {
-        method: 'DELETE'
+  const deleteProduct = (product) => {
+    const proceed = window.confirm(
+      "Do you really want to delete this product?"
+    );
+    if (proceed) {
+      fetch(
+        `https://boatfinder-server.vercel.app/myproductdelete/${product._id}`,
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          toast("Deleted product");
+          refetch();
+        });
     }
-   )
-   .then(res=> res.json())
-   .then(data=> {
-       toast('Deleted product')
-   refetch()
-   })
-
-}
-  }
+  };
 
   //advertise product
   const advertiseItem = (product) => {
@@ -47,7 +50,7 @@ const MyProducts = () => {
 
     const advertise = { advertised: "true" };
 
-    fetch(`http://localhost:5000/advertise/${product._id}`, {
+    fetch(`https://boatfinder-server.vercel.app/advertise/${product._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -98,7 +101,12 @@ const MyProducts = () => {
                 </button>
               </td>
               <td>
-                <button onClick={()=>{deleteProduct(product)}} class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                <button
+                  onClick={() => {
+                    deleteProduct(product);
+                  }}
+                  class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                >
                   Delete
                 </button>
               </td>

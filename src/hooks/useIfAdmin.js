@@ -6,7 +6,7 @@ const useIfAdmin = (email) => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/user/admin/${email}`)
+      fetch(`https://boatfinder-server.vercel.app/user/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {
           setIsAdmin(data.isAdmin);
@@ -14,7 +14,7 @@ const useIfAdmin = (email) => {
         });
     }
   }, [email]);
-  return [isAdmin, adminLoading]
+  return [isAdmin, adminLoading];
 };
 
 export default useIfAdmin;
