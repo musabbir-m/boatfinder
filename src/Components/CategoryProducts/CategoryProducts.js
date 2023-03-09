@@ -12,7 +12,9 @@ const CategoryProducts = () => {
     return <h2>Loading..</h2>
   }
   return (
-    <div className="mt-5 mx-auto lg:mt-10 px-5   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+   <div>
+    <h2></h2>
+     <div className="mt-5 mb-10 mx-auto lg:mt-10 px-5   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {data?.map((product) => (
         <CategoryProductCard
           key={product._id}
@@ -27,6 +29,7 @@ const CategoryProducts = () => {
         ></BookingModal>
       )}
     </div>
+   </div>
   );
 };
 

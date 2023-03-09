@@ -24,7 +24,7 @@ const Categories = () => {
         Lorem ipsum dolor sit, amet consectetur <br /> adipisicing elit. Nulla,
         sint.
       </p>
-      <div className="py-10 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="py-10 px-5 flex flex-col justify-center items-center lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {categories?.map((category) => (
           <div className="bg-white border-b-4 border-blue-500 max-w-sm   h-72 py-8 px-5 shadow-md border-0  text-center">
             <div className="flex justify-center">

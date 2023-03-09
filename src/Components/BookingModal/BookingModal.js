@@ -50,7 +50,7 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
     return (
       <>
         <input type="checkbox" id="booking-modal" className="modal-toggle" />
-        <div className="modal max-w-sm lg:max-w-full">
+        <div className="modal  max-w-sm lg:max-w-full">
           <div className="modal-box relative">
             <label
               htmlFor="booking-modal"
@@ -63,19 +63,17 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
               onSubmit={confirmBooking}
               className="grid grid-cols-1 gap-3 mt-6"
             >
-              <h4 className="text-center text-2xl font-semibold">
+              <h4 className="text-center text-blue-600 text-3xl font-semibold">
                 {" "}
                {currentBoat.productName}
               </h4>
   
-              <input
-                type="text"
-                name="name"
-                placeholder={`Price: ${currentBoat.price}`}
-                disabled
-                value={currentBoat.price}
-                className="input mt-2 input-bordered  w-full"
-              />
+              <p
+                
+                // value={currentBoat.price}
+                className=" mt-2 input-bordered  text-xl font-bold w-full"
+              >Price: $ <span className='text-orange-500'>{currentBoat.price}</span></p>
+              <h3>Give Your Contact Details:</h3>
               <input
                 type="text"
                 name="userName"
@@ -83,13 +81,12 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
                 className="input font-semibold mt-2 input-bordered w-full"
                 disabled
               />
-              <input
-                type="email"
-                name="email"
+              <p
+                
                 placeholder={`${user?.email}`}
                 className="input mt-2 input-bordered w-full"
                 disabled
-              />
+              > {user?.email} </p>
               <input
                 type="text"
                 name="phone"
@@ -100,7 +97,7 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
               <input
                 type="text"
                 name="location"
-                placeholder="Meeting Loacation"
+                placeholder="Loacation"
                 className="input mt-2 input-bordered w-full"
               />
   

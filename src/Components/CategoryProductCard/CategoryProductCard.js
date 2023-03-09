@@ -17,16 +17,10 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
         <div className="card-actions justify-end">
           {/* <div className="badge badge-outline">Fashion</div> 
       <div className="badge badge-outline">Products</div> */}
+
+      <p className="font-semibold">Price: $ <span className="text-orange-500">{price}</span></p>
         </div>
-        {/* <button
-          onClick={() => {
-            setCurrentBoat(boat);
-          }}
-          htmlFor="booking-modal"
-          className="bg-orange-500 px-3 py-2 w-28 mx-auto text-white"
-        >
-          Buy Now
-        </button> */}
+       
         <label
               htmlFor="booking-modal"
               className="btn border-none bg-orange-500 px-3 py-2 text-center w-28 mx-auto text-white"

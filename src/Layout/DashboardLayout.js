@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Components/Context/AuthProvider";
+import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import useIfAdmin from "../hooks/useIfAdmin";
 import useIfBuyer from "../hooks/useIfBuyer";
@@ -23,24 +24,25 @@ const DashboardLayout = () => {
     <div>
       {/* Navbar */}
       <Navbar></Navbar>
+      <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button  lg:hidden"
+          >
+            Dashboard
+          </label>
 
       {/* Dashboard */}
 
       <div className="drawer drawer-mobile">
         
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content flex flex-col items-center mt-10 justify-center">
           
           <Outlet></Outlet>
-          <label
-            htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
-          >
-            Dashboard
-          </label>
+          
         </div>
 
-        <div className="drawer-side bg-blue-500">
+        <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80  bg-gray-300 text-base-content">
             {isAdmin && (
@@ -82,6 +84,7 @@ const DashboardLayout = () => {
           </ul>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

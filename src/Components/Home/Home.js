@@ -16,7 +16,7 @@ const Home = () => {
             <HeroAbout></HeroAbout>
             <SellBoat></SellBoat>
             <Advertisement></Advertisement>
-            <Footer></Footer>
+            
            
         </div>
     );
