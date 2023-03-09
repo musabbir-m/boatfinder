@@ -69,7 +69,7 @@ const AddProduct = () => {
                 toast("Product Added Successfully");
               });
           }
-          navigate("/dashboard");
+          navigate("/dashboard/myproducts");
         });
     // 
 

@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Top of the navbar ends */}
 
       {/* Main navbar */}
-      <div className="navbar bg-black  text-white h-24">
+      <div className="navbar bg-blue-800  border-t-1 text-white border-black">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
