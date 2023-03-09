@@ -30,14 +30,15 @@ const Navbar = () => {
 
       {user?.uid ? (
         <>
-          <div className="dropdown">
-            <label tabIndex={0} className="btn m-1">
+          <div className="dropdown ">
+            <label tabIndex={0} className=" m-1">
              <FaUserCircle className="text-2xl"></FaUserCircle>
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
             >
+              <li className="ml-3 text-black font-semibold ">{user?.displayName}</li>
              <li>
              <button className="text-black " onClick={handleLogout}>logout</button>
              </li>

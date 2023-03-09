@@ -13,6 +13,10 @@ const Categories = () => {
       .then((data) => setCategories(data));
   }, []);
 
+  if (categories.length===0){
+    return <button className="btn btn-square loading bg-white text-blue-600 border-none flex justify-center mx-auto"></button>
+  }
+
   return (
     <div className="my-10 py-5 mx-auto bg-gray-200">
       <h2 className="text-5xl font-bold text-center">Boat Categories</h2>

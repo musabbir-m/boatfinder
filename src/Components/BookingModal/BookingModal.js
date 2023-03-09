@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../Context/AuthProvider';
 
 const BookingModal = ({currentBoat, setcurrentBoat}) => {
@@ -26,7 +27,7 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
   
       //post booking
   
-      fetch("https://laptopserver.vercel.app/bookings", {
+      fetch("http://localhost:5000/booking", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -37,7 +38,7 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
         .then((data) => {
           console.log(data);
           if (data.acknowledged) {
-            alert("successfully booked");
+            toast('Added to your booking.')
             setcurrentBoat(null);
           }
         });
@@ -58,9 +59,9 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
               onSubmit={confirmBooking}
               className="grid grid-cols-1 gap-3 mt-6"
             >
-              <h4 className="text-center">
+              <h4 className="text-center text-2xl font-semibold">
                 {" "}
-                Product: {currentBoat.productName}
+               {currentBoat.productName}
               </h4>
   
               <input
@@ -99,8 +100,8 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
                 className="input mt-2 input-bordered w-full"
               />
   
-              <button className="btn bg-[#FF9119] hover:bg-[#FF9119]/80 border-none">
-                Submit
+              <button type='submit' className="btn flex justify-center mx-auto btn-md max-w-xs bg-orange-500 border-none">
+                Confirm Booking
               </button>
             </form>
           </div>

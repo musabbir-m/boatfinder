@@ -4,7 +4,7 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
   const { productName, productCategory, price, condition, description, img } =
     boat;
   return (
-    <div className="card  w-96 bg-base-100 shadow-xl">
+    <div className="card  max-w-sm bg-base-100 shadow-xl">
       <figure>
         <img width="300px" height="300px" src={img} alt="" />
       </figure>
@@ -32,7 +32,7 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
               className="btn border-none bg-orange-500 px-3 py-2 text-center w-28 mx-auto text-white"
               onClick={() => setCurrentBoat(boat)}
             >
-             Buy Now
+             Book Now
             </label>
       </div>
     </div>
