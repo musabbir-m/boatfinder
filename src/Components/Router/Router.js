@@ -6,6 +6,7 @@ import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Dashboard from "../Dashboard/Dashboard";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
+import MyBookings from "../MyBookings/MyBookings";
 import MyProducts from "../MyProducts/MyProducts";
 import Signup from "../Signup/Signup";
 import PrivateRoute from "./PrivateRoute";
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         path: '/dashboard/allbuyer',
         element: <AllBuyer></AllBuyer>
       },
+      {
+        path: '/dashboard/mybooking',
+        element: <MyBookings></MyBookings>
+      }
 
     ]
   }

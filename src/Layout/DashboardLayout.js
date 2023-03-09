@@ -57,7 +57,7 @@ const DashboardLayout = () => {
             {
                 isBuyer && <>
                 <li className={sideDrawerLi}>
-                    <Link>My bookings</Link>
+                    <Link to='/dashboard/mybooking'>My bookings</Link>
                 </li>
                 <li className={sideDrawerLi}>
                     <Link>Wish list</Link>

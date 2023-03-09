@@ -8,21 +8,25 @@ const BookingModal = ({currentBoat, setcurrentBoat}) => {
       event.preventDefault();
       const form = event.target;
       const product = currentBoat.productName;
+      const productId= currentBoat._id
       const price = currentBoat.price;
       const phone = form.phone.value;
       const buyerEmail = user?.email;
       const buyerName = user?.displayName;
       const sellerEmail = currentBoat.sellerEmail;
       const location = form.location.value;
+      const img= currentBoat.img
   
       const booking = {
         product,
+        productId,
         price,
         phone,
         buyerEmail,
         buyerName,
         location,
         sellerEmail,
+        img
       };
   
       //post booking
