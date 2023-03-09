@@ -19,9 +19,9 @@ const Hero = () => {
     //   </Swiper>
     <div className='heromain   bg-cover h-[600px]'>
 
-     <div className='herotext w-2/4 h-full bg-black pt-8 px-5 '>
-         <h2 className='text-white text-6xl font-bold text-center mt-3 '> Find Your Next Boat and sail to The Blue </h2>
-         <p className='text-xl text-white font-semibold px-5'>
+     <div className='herotext w-2/4 h-full bg-black pt-8 px-5'>
+         <h2 className='text-white text-6xl font-bold text-center mt-3 mb-16 '> Find Your Next Boat and sail to The Blue </h2>
+         <p className='text-xl text-white font-semibold px-5 mb-5'>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quasi aliquid laborum dolores recusandae reprehenderit corporis adipisci dicta? 
          </p>
          <button className='px-4 py-3 bg-orange-500 text-white flex  mx-auto'>
