@@ -1,5 +1,5 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import './Hero.css'
 
 
@@ -17,7 +17,7 @@ const Hero = () => {
     //     <SwiperSlide>Slide 4</SwiperSlide>
     //     ...
     //   </Swiper>
-    <div className='heromain   bg-cover h-[500px]'>
+    <div className='heromain   bg-cover h-[600px]'>
 
      <div className='herotext w-2/4 h-full bg-black pt-8 px-5 '>
          <h2 className='text-white text-6xl font-bold text-center mt-3 '> Find Your Next Boat and sail to The Blue </h2>
