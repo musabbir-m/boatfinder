@@ -10,7 +10,7 @@ const SellBoat = () => {
                     Sell My Boat
                 </button>
             </div>
-            <img className='w-2/4 h-2/4' src="https://cdn.pixabay.com/photo/2016/08/05/18/17/sailboat-1572874_960_720.jpg" alt="" />
+            <img className='w-2/4 h-2/4' src="https://i.ibb.co/5TVRnT2/sellBoat.jpg" alt="" />
             
         </div>
     );

@@ -3,11 +3,11 @@ import {AiOutlineCheckCircle} from 'react-icons/ai'
 
 const HeroAbout = () => {
     return (
-        <div className=' flex mt-20  mx-10 '>
-            <div className='w-2/4'>
-                <img className='h-full ' src="https://media.istockphoto.com/id/1363734893/photo/happy-family-aboard-a-yacht-out-to-sea.jpg?b=1&s=170667a&w=0&k=20&c=COw-RRsIy5kkeFWM1NALhrEfylEOBkHgliYNuAy14iM=" alt="" />
+        <div className=' flex flex-col md:flex-row mt-20  mx-10 '>
+            <div className=' md:w-[100%]'>
+                <img className='h-full w-full ' src="https://i.ibb.co/2Mp3SNq/about.jpg" alt="" />
             </div>
-            <div className='pt-5 pl-12   bg-white shadow-md w-2/4 '>
+            <div className='pt-5 pl-12   bg-white shadow-md  '>
                 <h6 className='text-xl text-blue-800 font-semibold mb-3'>Why Buy Form Us</h6>
                 <h2 className='text-5xl font-semibold mb-5'> Best Quality and Large Collection</h2>
                 <p className='mb-5'>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Non, modi!</p>

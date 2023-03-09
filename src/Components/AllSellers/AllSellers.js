@@ -68,8 +68,8 @@ const AllSellers = () => {
   };
 
   return (
-    <div className="overflow-x-auto">
-      <h2 className="text-4xl text-center mb-5">Sellers</h2>
+    <div className="">
+      <h2 className="text-4xl text-blue-500 text-center mb-5">Sellers</h2>
       <table className="table table-zebra w-full">
         <thead>
           <tr>

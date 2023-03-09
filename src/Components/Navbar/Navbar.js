@@ -38,12 +38,12 @@ const Navbar = () => {
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
             >
-              <li className="ml-3 text-black font-semibold ">{user?.displayName}</li>
+              <li className="ml-3 text-black text-xl font-semibold ">{user?.displayName}</li>
              <li>
-             <button className="text-black " onClick={handleLogout}>logout</button>
+             <button className="text-blue-500 " onClick={handleLogout}>logout</button>
              </li>
               <li>
-               <Link to='/dashboard' className="text-black ">Dashboard</Link>
+               <Link to='/dashboard' className="text-blue-500 ">Dashboard</Link>
               </li>
             </ul>
           </div>
@@ -65,7 +65,7 @@ const Navbar = () => {
       {/* Top of the navbar ends */}
 
       {/* Main navbar */}
-      <div className="navbar bg-black  border-t-1 text-white border-black">
+      <div className="navbar   border-t-2 ease-in duration-500 text-blue-700 font-semibold border-blue-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -91,17 +91,15 @@ const Navbar = () => {
               {navitems}
             </ul>
           </div>
-          <a className=" normal-case text-xl bg-gray-200 rounded-md px-1 font-semibold italic text-black">
-            {" "}
-            <TbSpeedboat className="inline text-2xl"></TbSpeedboat>{" "}
-            <span className="text-blue-600"> Boat</span>Finder
-          </a>
+          
+          <a className=" normal-case text-xl"><img className="inline rounded-full" width="70px"  height="70px" src="/logo.jpg" alt="" /> Boatfinder</a>
         </div>
+       
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navitems}</ul>
         </div>
         <div className="navbar-end">
-          <Link className="px-6 py-3 bg-orange-500 "> Subscribe</Link>
+          <Link className="px-6 py-3 text-white  bg-blue-500 "> Subscribe</Link>
         </div>
       </div>
     </div>
