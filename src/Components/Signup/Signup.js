@@ -15,6 +15,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const [signupError, setSignupError] = useState("");
+  
   const handleSignup = (data) => {
     console.log(data);
     setSignupError("");
