@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 const AllSellers = () => {
   // laod sellers
-  const url = "https://boatfinder-server.vercel.app/seller";
+  const url = "http://localhost:5000/seller";
 
   const {
     data: sellers = [],
@@ -14,22 +14,17 @@ const AllSellers = () => {
   } = useQuery({
     queryKey: ["seller"],
     queryFn: async () => {
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('boatfinderToken')}`
+        }
+      });
       const data = await res.json();
       return data;
     },
   });
 
-  //     const [seller, setSeller]= useState([])
-  //     useEffect(
-  //     ()=> {
-  //         fetch('https://boatfinder-server.vercel.app/seller')
-  //         .then(res=> res.json())
-  //         .then(data=> setSeller(data))
-  //     }, []
-  //    )
-
-  //delete seller
+ 
 
   const deleteSeller = (target) => {
     const proceed = window.confirm();

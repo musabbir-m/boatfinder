@@ -69,7 +69,7 @@ const AddProduct = () => {
     //
   };
 
-  //callsses for style
+  //style
 
   const labelClass = " mb-2 text-sm font-medium text-gray-900 ";
   const inputClass =

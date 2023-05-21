@@ -10,7 +10,7 @@ import SellBoat from '../SeeBoat/SellBoat';
 const Home = () => {
     const data= useLoaderData()
     return (
-        <div>
+        <div className=''>
             <Hero></Hero> 
             <Categories></Categories>
             <HeroAbout></HeroAbout>

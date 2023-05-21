@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
-import { async } from "@firebase/util";
 import { toast } from "react-hot-toast";
 
 const MyProducts = () => {
@@ -18,7 +17,9 @@ const MyProducts = () => {
   } = useQuery({
     queryKey: ["myproducts"],
     queryFn: async () => {
-      const res = await fetch(url);
+      const res = await fetch(url,{
+        headers: `Bearer ${localStorage.getItem('boatfinderToken')}`
+      });
       const data = await res.json();
       return data;
     },
@@ -66,8 +67,12 @@ const MyProducts = () => {
   };
 
   if (isLoading) {
-    return <button className="btn btn-square loading"></button>;
+    return <div className="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
+    <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-32 w-32"></div>
+  </div> 
+  
   }
+  
   return (
     <div className="overflow-x-auto px-5 py-10">
       <h2 className="mb-5 lg:mb-10 text-center text-4xl font-semibold">
