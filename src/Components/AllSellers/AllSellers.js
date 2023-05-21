@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 const AllSellers = () => {
   // laod sellers
-  const url = "http://localhost:5000/seller";
+  const url = "https://boatfinder-server.vercel.app/seller";
 
   const {
     data: sellers = [],
@@ -16,15 +16,13 @@ const AllSellers = () => {
     queryFn: async () => {
       const res = await fetch(url, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem('boatfinderToken')}`
-        }
+          authorization: `Bearer ${localStorage.getItem("boatfinderToken")}`,
+        },
       });
       const data = await res.json();
       return data;
     },
   });
-
- 
 
   const deleteSeller = (target) => {
     const proceed = window.confirm();
@@ -43,8 +41,6 @@ const AllSellers = () => {
 
   //verify seller
   const verifySeller = (seller) => {
-   
-
     const verify = { verified: "true" };
 
     fetch(`https://boatfinder-server.vercel.app/seller/${seller._id}`, {
@@ -58,7 +54,6 @@ const AllSellers = () => {
       .then((data) => {
         toast("Seller verified");
         refetch();
-       
       });
   };
 
@@ -83,16 +78,20 @@ const AllSellers = () => {
               <td>{seller.email}</td>
               <td>
                 <button
-                onClick={()=> {verifySeller(seller)}}
+                  onClick={() => {
+                    verifySeller(seller);
+                  }}
                   type="button"
                   className="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 >
-                  {seller.verified==='true'? 'verified': 'verify'}
+                  {seller.verified === "true" ? "verified" : "verify"}
                 </button>
               </td>
               <td>
                 <button
-                  onClick={() => {deleteSeller(seller)}}
+                  onClick={() => {
+                    deleteSeller(seller);
+                  }}
                   type="button"
                   className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 >

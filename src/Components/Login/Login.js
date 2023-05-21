@@ -26,7 +26,7 @@ const Login = () => {
         console.log(user);
         const currentUser = { email: user.email };
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://boatfinder-server.vercel.app/jwt", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(currentUser),

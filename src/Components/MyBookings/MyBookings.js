@@ -6,7 +6,7 @@ import MyBookingCard from "../MyBookingCard/MyBookingCard";
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/booking?email=${user?.email}`;
+  const url = `https://boatfinder-server.vercel.app/booking?email=${user?.email}`;
 
   const {
     data: bookings = [],
@@ -15,10 +15,10 @@ const MyBookings = () => {
   } = useQuery({
     queryKey: ["booking"],
     queryFn: async () => {
-      const res = await fetch(url,{
+      const res = await fetch(url, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem('boatfinderToken')}`
-        }
+          authorization: `Bearer ${localStorage.getItem("boatfinderToken")}`,
+        },
       });
       const data = await res.json();
       console.log(data, "booking");
@@ -26,18 +26,19 @@ const MyBookings = () => {
     },
   });
 
-  if(isLoading)
- {
-       return <div class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
-       <div class="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-32 w-32"></div>
-   </div>
- } 
+  if (isLoading) {
+    return (
+      <div class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
+        <div class="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-32 w-32"></div>
+      </div>
+    );
+  }
 
- if(bookings?.message){
-  return <h2>{bookings.message}</h2>
- }
- 
- return (
+  if (bookings?.message) {
+    return <h2>{bookings.message}</h2>;
+  }
+
+  return (
     <div className="mx-auto px-2 md:px-5">
       <h2 className="text-5xl font-semibold text-blue-600 mb-3 text-center">
         {" "}
