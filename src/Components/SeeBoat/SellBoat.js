@@ -4,9 +4,9 @@ const SellBoat = () => {
     return (
         <div className='mt-16 mx-auto  py-5 flex flex-col md:flex-row justify-center items-center  bg-gray-300 '>
             <div className='w-2/4 max-w-full bg-gray-300 px-5 relative'>
-                <h3 className='text-5xl font-bold'>Sell your boat</h3>
+                <h3 className='text-3xl md:text-4xl font-bold'>Sell Your Boat</h3>
                 <p className='mt-8'>Ready to sell your boat? Listing in boatfinder <br /> makes it super-easy for you.</p>
-                <button className='mt-5 px-3 py-2 bg-orange-500 text-white'>
+                <button className='mt-5 mb-3 px-3 py-2 bg-orange-500 text-white'>
                     Sell My Boat
                 </button>
             </div>

@@ -12,7 +12,7 @@
     object-fit: cover;
     animation: zoomEffect 15s infinite;
     position: absolute;
-    z-index: 2;
+   
    
 }
 @keyframes zoomEffect {
