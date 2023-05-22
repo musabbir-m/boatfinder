@@ -1,11 +1,43 @@
 .heromain{
-    background-image: url("https://i.ibb.co/whCx1jz/HeroBg.jpg");
     
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
+    
    
 }
-.herotext{
 
+.heromain img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomEffect 15s infinite;
+    position: absolute;
+    z-index: 2;
+   
+}
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1); /* initial scale */
+  }
+  40% {
+    transform: scale(1.2); /* maximum scale */
+  }
+  50% {
+    transform: scale(1.2); /* pause at maximum scale */
+  }
+  90% {
+    transform: scale(1); /* back to the original scale */
+  }
+  100% {
+    transform: scale(1); /* restart the animation with a pause */
+  }
+}
+
+    
+.herotext{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
     background-color: rgba(98, 98, 153, 0.7);
 }
