@@ -99,7 +99,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navitems}</ul>
         </div>
         <div className="navbar-end">
-          <Link className="px-6 py-3 text-white  bg-blue-500 "> Subscribe</Link>
+          
         </div>
       </div>
     </div>

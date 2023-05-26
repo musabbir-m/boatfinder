@@ -2,7 +2,7 @@ import { updateEmail } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { useFetcher, useNavigate } from "react-router-dom";
+import { useFetcher, useNavigate,useLocation } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 const Signup = () => {
   const {
@@ -13,6 +13,8 @@ const Signup = () => {
 
   const { signUp, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { message } = location.state || {};
 
   const [signupError, setSignupError] = useState("");
   
@@ -49,6 +51,7 @@ const Signup = () => {
 
   return (
     <div className="hero min-h-screen bg-base-200">
+      {message && <p>{message}</p>}
       
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div className="card-body">
