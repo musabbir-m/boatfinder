@@ -2,7 +2,7 @@ import { updateEmail } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { useFetcher, useNavigate,useLocation } from "react-router-dom";
+import { useFetcher, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 const Signup = () => {
   const {
@@ -15,9 +15,10 @@ const Signup = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { message } = location.state || {};
+  console.log(message);
 
   const [signupError, setSignupError] = useState("");
-  
+
   const handleSignup = (data) => {
     console.log(data);
     setSignupError("");
@@ -50,11 +51,12 @@ const Signup = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      {message && <p>{message}</p>}
+    <div className="hero min-h-screen bg-base-200 pt-10">
+      
       
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div className="card-body">
+        {message && <p className="text-2xl text-blue-500 font-semibold ">{message}</p>}
           <form onSubmit={handleSubmit(handleSignup)} action="">
             <div className="form-control">
               <label className="label">
