@@ -3,9 +3,9 @@ import {AiOutlineCheckCircle} from 'react-icons/ai'
 
 const HeroAbout = () => {
     return (
-        <div className=' flex flex-col  md:flex-row justify-center items-center mt-20 mx-2 md:mx-10  '>
+        <div className=' flex flex-col gap-10 md:flex-row justify-center items-center mt-20 mx-2 md:mx-10  '>
             <div className=' '>
-                <img className='h-full max-w-full' src="https://i.ibb.co/2Mp3SNq/about.jpg" alt="" />
+                <img className='h-full  max-w-full rounded-lg' src="https://i.ibb.co/2Mp3SNq/about.jpg" alt="" />
             </div>
             <div className='pt-5 pl-5  max-w-full    '>
                 <h6 className='text-xl text-blue-800 font-semibold mb-3'>Why Buy Form Us</h6>

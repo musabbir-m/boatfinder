@@ -1,14 +1,17 @@
 import React from 'react';
 
 import './Hero.css'
+import Navbar from '../Navbar/Navbar';
 
 
 const Hero = () => {
     return (
    
-    <div className='heromain  bg-cover h-[500px]'>
+    <div className='heromain  bg-cover h-[550px]'>
+   
     
     <img src="https://i.ibb.co/whCx1jz/HeroBg.jpg" alt="" />
+    
 
      <div className='herotext w-full md:w-1/2 h-full bg-black pt-8 px-5'>
          <h2 className='text-white  text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-3 mb-5 lg:mb-16 '> Find Your Next Boat and sail to The Blue </h2>

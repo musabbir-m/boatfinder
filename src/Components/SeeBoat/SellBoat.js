@@ -9,8 +9,8 @@ const SellBoat = () => {
     });
   };
   return (
-    <div className="mt-16 mx-auto  py-5 flex flex-col md:flex-row justify-center items-center  bg-gray-300 ">
-      <div className="w-2/4 max-w-full bg-gray-300 px-5 relative">
+    <div className="mt-16 mx-auto  py-5 flex flex-col md:flex-row justify-center items-center  bg-blue-300 ">
+      <div className="w-2/4 max-w-full px-5 relative">
         <h3 className="text-3xl md:text-4xl font-bold">Sell Your Boat</h3>
         <p className="mt-8">
           Ready to sell your boat? Listing in boatfinder <br /> makes it
@@ -23,9 +23,9 @@ const SellBoat = () => {
           Sell My Boat
         </button>
       </div>
-      <div className="w-2/4">
+      <div className="w-2/4 mx-2">
         <img
-          className="w-full"
+          className="w-full rounded-xl"
           src="https://i.ibb.co/5TVRnT2/sellBoat.jpg"
           alt=""
         />

@@ -2,7 +2,25 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer mt-10 grid-rows-2 p-10 bg-neutral text-neutral-content">
+        <footer 
+        style={
+          {
+            backgroundImage: `url("https://i.ibb.co/68JcBXG/Pngtree-blue-line-abstract-wave-background-9056800.png")`,
+          
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center bottom',
+            backgroundSize: "cover"
+          }
+        }
+           className="footer mt-10 grid-rows-2 p-10 relative bg-white  text-black text-xl font-semibold font-sans">
+  
+  {/* add opacity */}
+  <div className='w-full h-full absolute to bg-blue-300'
+  style={{backgroundColor: 'rgb(45, 89, 134,.3)'}}
+  >
+  </div>
+
+
   <div>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
