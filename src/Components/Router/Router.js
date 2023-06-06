@@ -4,6 +4,7 @@ import AllBuyer from "../AllBuyer/AllBuyer";
 import AllSellers from "../AllSellers/AllSellers";
 import CategoryProducts from "../CategoryProducts/CategoryProducts";
 import Dashboard from "../Dashboard/Dashboard";
+import Payment from "../Dashboard/Payment/Payment";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import MyBookings from "../MyBookings/MyBookings";
@@ -79,6 +80,11 @@ router = createBrowserRouter([
         path: "/dashboard/mybooking",
         element: <MyBookings></MyBookings>,
       },
+      {
+        path: "/dashboard/payment/:id",
+        element: <Payment></Payment>,
+        loader: ({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
+      }
     ],
   },
 ]);

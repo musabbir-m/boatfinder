@@ -12,7 +12,7 @@ const Footer = () => {
             backgroundSize: "cover"
           }
         }
-           className="footer mt-10 grid-rows-2 p-10 relative bg-white  text-black text-xl font-semibold font-sans">
+           className="footer mt-10 grid-rows-2 p-10 relative bg-white  text-black text-xl font-semibold font-sansc">
   
   {/* add opacity */}
   <div className='w-full h-full absolute to bg-blue-300'

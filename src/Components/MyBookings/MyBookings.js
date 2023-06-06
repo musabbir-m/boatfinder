@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../Context/AuthProvider";
 import MyBookingCard from "../MyBookingCard/MyBookingCard";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -44,8 +46,8 @@ const MyBookings = () => {
         {" "}
         Your Bookings{" "}
       </h2>
-      <p className="text-center text-2xl font-semibold mb-10">
-        Make payment to confirm your purchase.
+      <p className="text-center flex items-center justify-cente mx-auto py-3 px-2 text-xl bg-cyan-200 w-96 font-semibold mb-16 mt-5">
+       <AiOutlineInfoCircle className="text-3xl"/> Make payment to confirm your purchase.
       </p>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {bookings?.map((booking) => (
