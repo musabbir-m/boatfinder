@@ -1,18 +1,22 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { json } from "react-router-dom";
 
 const CheckoutForm = ({booking}) => {
   const [clientSecret, setClientSecret]= useState("")  
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [processing, setProcessing]= useState(false)
+  const [transactionId, setTransactionId] = useState("");
   const stripe = useStripe();
   const elements = useElements();
-  const {price, buyerName, buyerEmail}= booking
+  const {price, buyerName, buyerEmail, _id}= booking
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json",
+      headers: { "content-type": "application/json",
     authorization: `bearer ${localStorage.getItem("boatfinderToken")}`
     },
       body: JSON.stringify({ price }),
@@ -41,13 +45,17 @@ const CheckoutForm = ({booking}) => {
       setCardError("");
     }
 
+    setSuccess('')
+    setProcessing(true)
+
     const {paymentIntent, error: confirmError}= await stripe.confirmCardPayment(clientSecret,
         {
             payment_method: {
                 card: card, 
                 billing_details: {
                     name: buyerName,
-                    email: buyerEmail
+                    email: buyerEmail,
+                   
                 }
             }
         })
@@ -56,6 +64,36 @@ const CheckoutForm = ({booking}) => {
         setCardError(confirmError.message)
         return 
     }
+
+    if(paymentIntent.status==="succeeded"){
+     
+    
+
+      const payment= {
+        price,
+        transactionId: paymentIntent.id,
+        email: buyerEmail,
+        bookingId: _id
+      }
+
+      fetch("http://localhost:5000/payment", {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer ${localStorage.getItem('boatfinderToken')}`
+        },
+        body: JSON.stringify(payment)
+      })
+      .then(res=> res.json())
+      .then(data=> {
+        if(data.insertedId){
+          setSuccess("Congrats! your payment completed")
+          setTransactionId(paymentIntent.id)
+        }
+      })
+      
+    }
+    setProcessing(false)
     console.log(paymentIntent, "intent");
   };
 
@@ -82,7 +120,7 @@ const CheckoutForm = ({booking}) => {
         />
         <button
           type="submit"
-          disabled={!stripe || !clientSecret}
+          disabled={!stripe || !clientSecret || processing}
           className="btn btn-sm btn-primary mt-4"
         >
           Pay
@@ -91,6 +129,13 @@ const CheckoutForm = ({booking}) => {
 
       {
         cardError && <p className="text-red-500">{cardError}</p>
+      }
+      {
+        success && <div>
+          <p className="text-green-500">{success}</p>
+          <p>Your transaction id: <span className="font-bold">{transactionId}</span> </p>
+
+        </div>
       }
     </>
 
