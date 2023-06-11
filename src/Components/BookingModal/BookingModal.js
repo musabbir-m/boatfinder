@@ -44,6 +44,8 @@ const BookingModal = ({ currentBoat, setcurrentBoat }) => {
         if (data.acknowledged) {
           toast("Added to your booking.");
           setcurrentBoat(null);
+        } else {
+          toast.error(data.message);
         }
       });
   };

@@ -18,7 +18,9 @@ const MyProducts = () => {
     queryKey: ["myproducts"],
     queryFn: async () => {
       const res = await fetch(url,{
-        headers: `Bearer ${localStorage.getItem('boatfinderToken')}`
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('boatfinderToken')}`,
+        },
       });
       const data = await res.json();
       return data;

@@ -18,16 +18,24 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
           {/* <div className="badge badge-outline">Fashion</div> 
       <div className="badge badge-outline">Products</div> */}
 
-      <p className="font-semibold">Price: $ <span className="text-orange-500">{price}</span></p>
+          <p className="font-semibold">
+            Price: $ <span className="text-orange-500">{price}</span>
+          </p>
         </div>
-       
-        <label
-              htmlFor="booking-modal"
-              className="btn border-none bg-orange-500 px-3 py-2 text-center w-28 mx-auto text-white"
-              onClick={() => setCurrentBoat(boat)}
-            >
-             Book Now
-            </label>
+
+        {!boat.booked && (
+          <label
+            htmlFor="booking-modal"
+            className="btn border-none bg-orange-500 px-3 py-2 text-center w-28 mx-auto text-white"
+            onClick={() => setCurrentBoat(boat)}
+          >
+            Book Now
+          </label>
+        )}
+
+        {
+          boat.booked==="true" && <p className="font-bold text-orange-500">Already Booked</p>
+        }
       </div>
     </div>
   );

@@ -43,9 +43,30 @@ const Login = () => {
       .catch((err) => setError(err.message));
   };
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen flex flex-col md:flex-row  justify-center gap-5 bg-base-200">
+      {/* demo accounts */}
+      <div>
+        <h2 className="text-2xl">Please try these accounts <br /> to check authorization</h2>
+        <div className="w-86 mt-3 font-semibold bg-blue-500 p-3 rounded-md text-white">
+
+          <p>Buyer: mnew@gmail.com</p>
+          <p>Seller: musabbir04@gmail.com</p> 
+          <p>Admin: bbc@gmail.com</p>
+          <br />
+          <p className="">Password for all: <span className="text-red-300">123456</span></p>
+          
+
+        </div>
+
+          
+      </div>
+      {/* demo account ends */}
+
       <div className=" flex-shrink-0 card w-full max-w-sm shadow-2xl bg-base-100">
+
+      
         <div className="card-body">
+        
           <form onSubmit={handleSubmit(handleLogin)} action="">
             <div className="form-control">
               <label className="label">
