@@ -17,6 +17,7 @@ const Advertisement = () => {
 
     autoplay: true,
     autoplaySpeed: 1500,
+   
 
     responsive: [
       {

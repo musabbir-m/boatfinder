@@ -6,6 +6,7 @@ import Categories from '../Categories/Categories';
 import Footer from '../Footer/Footer';
 import Hero from '../Hero/Hero';
 import SellBoat from '../SeeBoat/SellBoat';
+import Testimonials from './Testimonials/Testimonials';
 
 const Home = () => {
     const data= useLoaderData()
@@ -15,6 +16,7 @@ const Home = () => {
             <Categories></Categories>
             <HeroAbout></HeroAbout>
             <SellBoat></SellBoat>
+            <Testimonials></Testimonials>
             <Advertisement></Advertisement>
             
            
