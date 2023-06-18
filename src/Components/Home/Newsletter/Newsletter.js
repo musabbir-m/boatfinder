@@ -19,7 +19,7 @@ const Newsletter = () => {
   return (
     <div className="mt-10 h-96 flex flex-col items-center justify-center">
       <h2 className="text-center  text-3xl font-semibold py-3">Newsletter</h2>
-      <p className="font-semibold text-xl">Subcribe to our newsletter</p>
+      <p className=" text-xl"> Get the latest news  and updates.</p>
       <div className="mt-5 w-full flex items-center justify-center ">
         <form action="" onSubmit={handleSubscribe}>
           <input
@@ -32,7 +32,7 @@ const Newsletter = () => {
             className="inline-block px-3 py-3 h-12 bg-orange-500 hover:bg-blue-600 hover:text-white ease-in duration-200"
             type="submit"
           >
-            Subscribe
+           Subscribe
           </button>
         </form>
       </div>
