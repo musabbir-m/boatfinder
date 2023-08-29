@@ -10,12 +10,12 @@ import img5 from "../../../Assets/img5.jpg";
 
 const Testimonials = () => {
   return (
-    <div className="testimonial-main w-full   h-[1000px] md:h-[500px]  mt-16 mx-auto text-white ">
+    <div className="testimonial-main w-full   h-[1000px] md:h-[500px]  mx-auto text-white ">
       <div className="testimonial-overlay">
-        <h2 className="text-3xl font-semibold text-center text-white mt-8">
+        <h2 className="text-3xl font-semibold text-center text-white mt-8 md:mt-16">
           What Our Clients Say
         </h2>
-        <div className=" px-5 py-5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center mt-8">
+        <div className=" px-5 py-5 md:py-16 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center mt-8">
           <div className="w-80 flex flex-col items-center ">
             <RiDoubleQuotesL className="text-orange-400 text-3xl" />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo fugit
