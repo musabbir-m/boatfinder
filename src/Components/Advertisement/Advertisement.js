@@ -63,7 +63,7 @@ const Advertisement = () => {
       <h2 className="mb-5 text-blue-600 text-center text-5xl font-semibold">
         Advertisement
       </h2>
-      <Slider {...settings}>
+      <Slider className=" overflow-hidden " {...settings}>
         {ads?.map((ad) => (
           <AdvertisementCard key={ad._id} ad={ad}></AdvertisementCard>
         ))}
