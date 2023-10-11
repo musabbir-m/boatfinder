@@ -4,10 +4,9 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
   const { productName, productCategory, price, condition, description, img } =
     boat;
   return (
-    <div className="card  max-w-sm bg-base-100 shadow-xl">
-      <figure>
-        <img width="300px" height="300px" src={img} alt="" />
-      </figure>
+    <div className="border-2 border-gray-100 max-w-sm bg-base-100 shadow-xl">
+      <img className="w-full h-60" src={img} alt="" />
+
       <div className="card-body">
         <h2 className="card-title">
           {productName}
@@ -23,19 +22,21 @@ const CategoryProductCard = ({ boat, setCurrentBoat }) => {
           </p>
         </div>
 
-        {!boat.booked && (
+        {!boat.booked ? (
           <label
             htmlFor="booking-modal"
-            className="btn border-none bg-orange-500 px-3 py-2 text-center w-28 mx-auto text-white"
+            className="btn  border-none bg-blue-500 px-3 py-2 text-center w-28 mx-auto text-white"
             onClick={() => setCurrentBoat(boat)}
           >
             Book Now
           </label>
+        ) : (
+          <p className="font-bold text-blue-500">Already booked</p>
         )}
 
-        {
-          boat.booked==="true" && <p className="font-bold text-orange-500">Already Booked</p>
-        }
+        {boat?.booked === "true" && (
+          <p className="font-bold text-orange-500">Already Booked</p>
+        )}
       </div>
     </div>
   );

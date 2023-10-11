@@ -21,7 +21,7 @@ const DashboardLayout = () => {
   const sideDrawerLi= "text-orange-500 text-xl font-semibold boreder bg-white mt-3 "
 
   return (
-    <div>
+    <div className="">
       {/* Navbar */}
       <Navbar></Navbar>
       <label
@@ -36,9 +36,9 @@ const DashboardLayout = () => {
       <div className="drawer drawer-mobile">
         
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center mt-10 ">
+        <div className="drawer-content flex flex-col items-center mt-10 py-16">
           
-          <Outlet></Outlet>
+          <Outlet ></Outlet>
           
         </div>
 

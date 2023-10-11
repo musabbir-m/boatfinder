@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+
   const handleLogout = () => {
     logout().then((data) => {});
   };
@@ -32,22 +33,35 @@ const Navbar = () => {
         <>
           <div className="dropdown ">
             <label tabIndex={0} className=" m-1">
-             <FaUserCircle className="text-2xl"></FaUserCircle>
+              {user?.photoURL? (
+                <img
+                  className="w-16 h-16 rounded-full"
+                  alt="user"
+                  src={user.photoURL}
+                />
+              ) : (
+                <FaUserCircle className="text-2xl"></FaUserCircle>
+              )}
             </label>
             <ul
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
             >
-              <li className="ml-3 text-black text-xl font-semibold ">{user?.displayName}</li>
-             <li>
-             <button className="text-blue-500 " onClick={handleLogout}>logout</button>
-             </li>
+              <li className="ml-3 text-black text-xl font-semibold ">
+                {user?.displayName}
+              </li>
               <li>
-               <Link to='/dashboard' className="text-blue-500 ">Dashboard</Link>
+                <button className="text-blue-500 " onClick={handleLogout}>
+                  logout
+                </button>
+              </li>
+              <li>
+                <Link to="/dashboard" className="text-blue-500 ">
+                  Dashboard
+                </Link>
               </li>
             </ul>
           </div>
-          
         </>
       ) : (
         <>
@@ -91,16 +105,23 @@ const Navbar = () => {
               {navitems}
             </ul>
           </div>
-          
-          <a className=" normal-case text-xl"><img className="inline rounded-full" width="70px"  height="70px" src="/logo.jpg" alt="" /> Boatfinder</a>
+
+          <a className=" normal-case text-xl">
+            <img
+              className="inline rounded-full"
+              width="70px"
+              height="70px"
+              src="/logo.jpg"
+              alt=""
+            />{" "}
+            Boatfinder
+          </a>
         </div>
-       
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navitems}</ul>
         </div>
-        <div className="navbar-end">
-          
-        </div>
+        <div className="navbar-end"></div>
       </div>
     </div>
   );
